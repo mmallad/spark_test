@@ -9,8 +9,8 @@ Random data are ingested via mqtt to Spark. Spark transforms received data to ch
 4. Streaming code is under sparkApp module.
 
 Please install any mqtt broker.
-#Mosquitto Broker Installation
-%sudo apt-get install mosquitto
-#Compile and make jar.
-%mvn package
+##Mosquitto Broker Installation
+`sudo apt-get install mosquitto`
+##Compile and make jar.
+`mvn package`
 
