@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>WS Test</title>
+</head>
+<body>
+    <input type="button" value="Connect" onclick="ConnectWs();">
+    <div id="a"></div>
+    <div id="b"></div>
+    <div id="c"></div>
+    <div id="d"></div>
+    <div id="e"></div>
+    <div id="f"></div>
+    <div id="g"></div>
+    <div id="h"></div>
+    <div id="i"></div>
+    <div id="j"></div>
+    <div id="k"></div>
+    <div id="l"></div>
+    <div id="m"></div>
+    <div id="n"></div>
+    <div id="o"></div>
+    <div id="p"></div>
+    <div id="q"></div>
+    <div id="r"></div>
+    <div id="s"></div>
+    <div id="t"></div>
+    <div id="u"></div>
+    <div id="v"></div>
+    <div id="w"></div>
+    <div id="x"></div>
+    <div id="y"></div>
+    <div id="z"></div>
+    <script type="text/javascript">
+        var ws;
+        function ConnectWs(){
+            ws = new WebSocket("ws://localhost:7474/stream");
+            ws.onopen = function () {
+                console.log("Connected")
+            };
+            ws.onmessage = function(evt){
+                var d = evt.data.split("=>");
+                console.log(d);
+                if(d[0]=="a") document.getElementById("a").innerHTML = evt.data;
+                if(d[0]=="b") document.getElementById("b").innerHTML = evt.data;
+                if(d[0]=="c") document.getElementById("c").innerHTML = evt.data;
+                if(d[0]=="d") document.getElementById("d").innerHTML = evt.data;
+                if(d[0]=="e") document.getElementById("e").innerHTML = evt.data;
+                if(d[0]=="f") document.getElementById("f").innerHTML = evt.data;
+                if(d[0]=="g") document.getElementById("g").innerHTML = evt.data;
+                if(d[0]=="h") document.getElementById("h").innerHTML = evt.data;
+                if(d[0]=="i") document.getElementById("i").innerHTML = evt.data;
+                if(d[0]=="j") document.getElementById("j").innerHTML = evt.data;
+                if(d[0]=="k") document.getElementById("k").innerHTML = evt.data;
+                if(d[0]=="l") document.getElementById("l").innerHTML = evt.data;
+                if(d[0]=="m") document.getElementById("m").innerHTML = evt.data;
+                if(d[0]=="n") document.getElementById("n").innerHTML = evt.data;
+                if(d[0]=="o") document.getElementById("o").innerHTML = evt.data;
+                if(d[0]=="p") document.getElementById("p").innerHTML = evt.data;
+                if(d[0]=="q") document.getElementById("q").innerHTML = evt.data;
+                if(d[0]=="r") document.getElementById("r").innerHTML = evt.data;
+                if(d[0]=="s") document.getElementById("s").innerHTML = evt.data;
+                if(d[0]=="t") document.getElementById("t").innerHTML = evt.data;
+                if(d[0]=="u") document.getElementById("u").innerHTML = evt.data;
+                if(d[0]=="v") document.getElementById("v").innerHTML = evt.data;
+                if(d[0]=="w") document.getElementById("w").innerHTML = evt.data;
+                if(d[0]=="x") document.getElementById("x").innerHTML = evt.data;
+                if(d[0]=="y") document.getElementById("y").innerHTML = evt.data;
+                if(d[0]=="z") document.getElementById("z").innerHTML = evt.data;
+            };
+            ws.onclose = function(){
+                console.log("Connection closed.")
+            };
+            ws.onerror = function(evt){
+                console.log(evt);
+            }
+        }
+    </script>
+</body>
+</html>
